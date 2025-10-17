@@ -1,0 +1,191 @@
+/* Genel Ayarlar ve PARLAK Renk Paleti */
+:root {
+    --primary-color: #00bcd4;      /* Canlı Teal/Mavi Vurgu */
+    --secondary-color: #4dd0e1;    
+    --background-dark: #0a192f;    /* Derin Lacivert Arka Plan (Space Blue) */
+    --background-light: #162e52;   
+    --text-color: #f0f8ff;         
+    --text-secondary: #ffffff;     
+    --border-color: #00bcd4;       
+    --shadow-light: rgba(0, 0, 0, 0.4);
+    --shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
+/* Sayfanın kenar boşluklarını sıfırla */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+    font-family: 'Segoe UI', 'Roboto', sans-serif; 
+    color: var(--text-color);
+    background-color: var(--background-dark); /* Arka plan rengi */
+}
+
+/* Form sayfaları için arka plan */
+body.form-body {
+    background-color: var(--background-dark);
+    display: flex;
+    flex-direction: column; 
+    overflow: auto; 
+}
+
+/* Harita konteynırını tüm ekranı kaplayacak şekilde ayarla */
+#cesiumContainer {
+    /* Navbar'ın altında başlaması için padding-top kullanılmıştır */
+    position: absolute; 
+    top: 60px; /* Navbar yüksekliğine eşit */
+    height: calc(100% - 60px); 
+    width: 100%;
+    background-color: var(--background-dark);
+}
+
+/* * * * NAVBAR STİLLERİ * * * */
+
+#navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Sabit yükseklik */
+    
+    background-color: var(--background-dark); /* Koyu lacivert navbar */
+    color: var(--text-color);
+    padding: 0 60px; /* Dikey padding kaldırıldı, yükseklik ayarlandı */
+    z-index: 1000; 
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 2px 10px var(--shadow-dark); 
+}
+
+.logo {
+    font-size: 1.7em; 
+    font-weight: 600; 
+    color: var(--text-color); 
+    letter-spacing: 0.5px; 
+}
+
+.nav-links a {
+    color: var(--text-secondary); 
+    text-decoration: none;
+    margin-left: 35px; 
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s ease-in-out;
+    border-bottom: 2px solid transparent; 
+}
+
+.nav-links a:hover {
+    color: var(--primary-color); 
+    border-bottom: 2px solid var(--primary-color); 
+}
+
+/* Sign Up butonu */
+.nav-links .sign-up {
+    background-color: transparent; 
+    color: var(--primary-color); 
+    border: 2px solid var(--primary-color); 
+    padding: 8px 18px;
+    border-radius: 25px; 
+    margin-left: 45px; 
+    font-weight: 600;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-shadow: none; 
+}
+
+.nav-links .sign-up:hover {
+    background-color: var(--primary-color); 
+    color: var(--background-dark); 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px var(--shadow-dark);
+}
+
+/* Cesium araç çubuklarının konumunu düzeltme (Navbar'ın altına kaydırma) */
+.cesium-widget-toolbar {
+    top: 70px !important; /* Navbar'ın hemen altına yerleştirir */
+    right: 10px !important;
+}
+
+/* Diğer form stilleri (signin/signup) - Önceki dosyalarınızdaki gibi korunmuştur */
+/* Form sayfaları için arka plan */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); 
+    padding-top: 70px; 
+    padding-bottom: 20px; 
+}
+/* ... diğer form box, input, button stilleri ... */
+.form-box {
+    background-color: var(--background-light); 
+    color: var(--text-color);
+    padding: 40px;
+    border: 1px solid var(--primary-color); 
+    max-width: 450px; 
+    border-radius: 10px; 
+    box-shadow: 0 10px 30px var(--shadow-dark); 
+}
+.form-box h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+    font-size: 2em;
+    text-align: center;
+}
+.form-box input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px; 
+    box-sizing: border-box;
+    background-color: var(--background-dark); 
+    color: var(--text-color);
+}
+.form-button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--background-dark);
+    padding: 14px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+/* Genel Ayarlar ve PARLAK Renk Paleti */
+:root {
+    /* Mevcut renkleriniz korunuyor */
+    --primary-color: #00bcd4;      
+    --background-dark: #000a12;    /* ARKA PLAN: Daha koyu, uzay hissi veren siyaha yakın bir mavi */
+    /* ... diğer renkleriniz ... */
+}
+
+/* Sayfanın kenar boşluklarını sıfırla */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+    font-family: 'Segoe UI', 'Roboto', sans-serif; 
+    color: var(--text-color);
+    background-color: var(--background-dark); /* Arka planı koyu uzay rengi yaptık */
+}
+
+/* Harita konteynırını tüm ekranı kaplayacak şekilde ayarla */
+#cesiumContainer {
+    position: absolute; 
+    top: 60px; 
+    height: calc(100% - 60px); 
+    width: 100%;
+    background-color: var(--background-dark); /* Bu da harita boşken koyu görünmesini sağlar */
+}
+
+/* ... (Geri kalan Navbar ve Form Stilleri aynı kalır) ... */
+
